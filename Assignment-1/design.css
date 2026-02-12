@@ -1,0 +1,144 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    color: #4a6cf7;
+}
+
+/* Inputs (Equal Size for All) */
+input,
+select,
+textarea {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: white;
+}
+
+/* Textarea Adjustment */
+textarea {
+    resize: none;
+}
+
+/* Remove default select arrow */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Focus Effects */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102,126,234,0.4);
+}
+
+/* Buttons */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Add Event Button */
+.add-btn {
+    width: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Clear Button */
+.clear-btn {
+    flex: 1;
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+/* Sample Button */
+.sample-btn {
+    flex: 1;
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.clear-btn:hover,
+.sample-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Event Items */
+.event-item {
+    background: #f4f6ff;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* DOM Demo Section */
+.dom-demo {
+    margin: 20px auto;
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
