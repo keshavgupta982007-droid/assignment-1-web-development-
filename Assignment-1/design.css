@@ -1,144 +1,203 @@
-/* Reset */
+/* ===== Reset ===== */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Body ===== */
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(to right, #43cea2, #185a9d);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #f1f5f9;
+    padding: 40px 20px;
+    max-width: 950px;
+    margin: auto;
+    min-height: 100vh;
 }
 
-/* Header */
+/* ===== Headings ===== */
+
 h1 {
     text-align: center;
-    color: white;
-    padding: 20px 0;
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
 }
 
-/* Layout */
-.container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    flex-wrap: wrap;
+h2 {
+    margin: 30px 0 15px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 6px;
 }
 
-/* Cards */
-.card {
-    background: white;
-    padding: 20px;
+/* ===== Card Base (Glass Effect) ===== */
+
+form,
+.event-card,
+.empty-state,
+#demoContent {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
-    width: 400px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.card h2 {
-    color: #4a6cf7;
+/* ===== Form ===== */
+
+label {
+    display: block;
+    margin-bottom: 14px;
+    font-weight: 500;
 }
 
-/* Inputs (Equal Size for All) */
 input,
 select,
 textarea {
     width: 100%;
-    height: 45px;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 9px 12px;
+    margin-top: 6px;
     border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
 }
 
-/* Textarea Adjustment */
-textarea {
-    resize: none;
-}
-
-/* Remove default select arrow */
-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
-    padding-right: 40px;
-}
-
-/* Focus Effects */
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 8px rgba(102,126,234,0.4);
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
+
 button {
-    padding: 10px;
+    padding: 9px 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: white;
-    transition: 0.3s;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.2s ease;
 }
 
-/* Add Event Button */
-.add-btn {
-    width: 100%;
-    background: linear-gradient(to right, #667eea, #764ba2);
-}
-
-.add-btn:hover {
+button:hover {
     transform: translateY(-2px);
-    opacity: 0.9;
 }
 
-/* Button Group */
-.btn-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+button:active {
+    transform: translateY(0);
+}
+
+/* Primary Button */
+form button {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
 }
 
 /* Clear Button */
-.clear-btn {
-    flex: 1;
-    background: linear-gradient(to right, #667eea, #764ba2);
+#clearAllBtn {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    margin-right: 10px;
 }
 
 /* Sample Button */
-.sample-btn {
-    flex: 1;
-    background: linear-gradient(to right, #667eea, #764ba2);
+#addSampleBtn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
 }
 
-.clear-btn:hover,
-.sample-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+/* ===== Event Cards ===== */
+
+#eventContainer {
+    margin-top: 20px;
 }
 
-/* Event Items */
-.event-item {
-    background: #f4f6ff;
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 8px;
+.event-card {
+    margin-bottom: 18px;
+    position: relative;
+    transition: 0.3s ease;
 }
 
-/* DOM Demo Section */
-.dom-demo {
-    margin: 20px auto;
-    width: 60%;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.event-card h3 {
+    margin-bottom: 5px;
+}
+
+.event-card div {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===== Category Badge ===== */
+
+.event-card span {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+}
+
+/* ===== Delete Button ===== */
+
+.delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 26px;
+    padding: 0;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+/* ===== Empty State ===== */
+
+.empty-state {
+    text-align: center;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    color: #cbd5e1;
+}
+
+/* ===== DOM Demo ===== */
+
+#demoContent {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* ===== Divider ===== */
+
+hr {
+    margin: 35px 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
